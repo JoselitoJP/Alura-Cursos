@@ -1,15 +1,14 @@
-void main(){
-
+void main() {
   // Future myfuture = Future((){
   //   print('Going back to the Future');
   //   return 21;
   // }).then((value) => print('The value is $value'));
 
-  Future <int> myFutureFunc()async{
+  Future<int> myFutureFunc() async {
     print('I have a function in the Future');
     await Future.delayed(Duration(seconds: 5));
     throw Exception();
-    return 12 ;
+    return 12;
   }
 
   // myFutureFunc()
@@ -17,18 +16,18 @@ void main(){
   // .onError((error, stackTrace) => print('An Error occurred'))
   // .whenComplete(() => print('The Future is Over'));
 
-  Future<int> myFutureErrorFunc(int a, int b) async{
+  Future<int> myFutureErrorFunc(int a, int b) async {
     try {
-      if(a>b){
+      if (a > b) {
         throw Exception();
       }
       print('I have a functional Function');
       await Future.delayed(Duration(seconds: 5));
-      return 42; 
+      return 42;
     } catch (e) {
       print('An error occourred: $e');
       return 42;
-    }finally{
+    } finally {
       print('The Future is Over');
     }
   }
